@@ -75,7 +75,7 @@ export const run = (
     if (options?.printTestResults || error || failed) {
       log(`  Expected: `);
       console.log(testcase.answer);
-      log(`  Actual: `);
+      log(`  Actual:   `);
       console.log(result);
     }
 
