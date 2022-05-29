@@ -19,7 +19,8 @@ const testcases = [
 
 const options = {
   problemName: 'Reverse Integer',
-  printInput: true
+  printInput: false,
+  printTestResults: true
 };
 
 const solution = (x: number) => {
