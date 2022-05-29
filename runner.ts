@@ -27,6 +27,10 @@ const getStatus = (error: any, failed: boolean) => {
   else return 'PASSED';
 };
 
+const log = (input: any) => {
+  process.stdout.write(input);
+};
+
 export const run = (
   solution: Solution,
   testcases: TestCase[],
@@ -63,10 +67,17 @@ export const run = (
     // Print results and helpful output
     console.log(`[${i + 1}/${numCases}]: ${getStatus(error, failed)}`);
 
-    if (options?.printInput || error || failed) console.log(testcase.input);
+    if (options?.printInput || error || failed) {
+      log('  Input: ');
+      console.log(testcase.input);
+    }
 
-    if (options?.printTestResults || error || failed)
-      console.log(`Expected: ${testcase.answer} | Actual: ${result}`);
+    if (options?.printTestResults || error || failed) {
+      log(`  Expected: `);
+      console.log(testcase.answer);
+      log(`  Actual: `);
+      console.log(result);
+    }
 
     if (error) console.log(error);
     console.log('\n');
