@@ -1,9 +1,10 @@
 // Optional options to run the test 'suite'. Mostly for output options.
-type RunOptions = {
+export type RunOptions = {
   problemName?: string;
   printInput?: boolean;
   printTestResults?: boolean;
   printStatistics?: boolean;
+  runCases?: number[];
 };
 
 // The function to run - the code which actually solves the problem
@@ -16,7 +17,8 @@ const defaultOptions: RunOptions = {
   problemName: undefined,
   printInput: false,
   printTestResults: true,
-  printStatistics: true
+  printStatistics: true,
+  runCases: undefined
 };
 
 const getStatus = (error: any, failed: boolean) => {
@@ -34,13 +36,17 @@ export const run = (
 
   // Print header
   console.log(
-    `=========== RUNNING [${numCases}] testcases ${
+    `=========== RUNNING [${
+      options?.runCases ? options.runCases.length + '/' : ''
+    }${numCases}] testcases ${
       options?.problemName ? 'for problem: ' + options.problemName : ''
     } ===========\n`
   );
 
   // Run each test case
   for (var i = 0; i < numCases; i++) {
+    if (options?.runCases && !options?.runCases.includes(i + 1)) continue;
+
     const testcase = testcases[i];
     let result: any = undefined;
     let error: any = undefined;

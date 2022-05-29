@@ -21,6 +21,7 @@ const options = {
   printInput: true,
   printTestResults: true
   // printStatistics: true
+  // runCases: [1, 3]
 };
 
 const solution = (input: any) => {
