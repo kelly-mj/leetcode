@@ -59,7 +59,7 @@ export const run = (
     // Run the test case and record result and/or error
     try {
       result = solution(testcase.input);
-      result !== testcase.answer ? (failed = true) : undefined;
+      failed = result !== testcase.answer;
     } catch (e) {
       error = e;
     }
@@ -80,7 +80,7 @@ export const run = (
     }
 
     if (error) console.log(error);
-    console.log('\n');
+    console.log('');
   }
 
   // Print overall statistics, if desired
