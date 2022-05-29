@@ -57,7 +57,7 @@ export const run = (
     // Print results and helpful output
     console.log(`[${i + 1}/${numCases}]: ${getStatus(error, failed)}`);
 
-    if (options?.printInput || error || failed) testcase.input;
+    if (options?.printInput || error || failed) console.log(testcase.input);
 
     if (options?.printTestResults || error || failed)
       console.log(`Expected: ${testcase.answer} | Actual: ${result}`);
