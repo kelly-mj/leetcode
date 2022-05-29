@@ -1,5 +1,7 @@
 import { RunOptions, run } from '../runner';
 
+// Source: https://www.npmjs.com/package/ts-node
+
 const testcases = [
   {
     input: 3,
