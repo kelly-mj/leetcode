@@ -49,7 +49,7 @@ export const run = (
 
   // Run each test case
   for (var i = 0; i < numCases; i++) {
-    if (options?.runCases && !options?.runCases.includes(i + 1)) continue;
+    if (options?.runCases?.length && !options?.runCases.includes(i + 1)) continue;
 
     const testcase = testcases[i];
     let result: any = undefined;
