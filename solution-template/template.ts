@@ -2,21 +2,21 @@ import { run } from '../runner';
 
 const testcases = [
   {
-    input: '',
-    answer: ''
+    input: 'foo',
+    answer: 'bar'
   }
 ];
 
 const options = {
-  // problemName: undefined,
-  // printInput: false,
-  // printTestResults: true,
-  // printStatistics: true,
-  // runCases: []
+  problemName: undefined,
+  printInput: false,
+  printTestResults: true,
+  printStatistics: true,
+  runCases: []
 };
 
 const solution = (input) => {
-  return '';
+  return 'bar';
 };
 
 run(solution, testcases, options);
